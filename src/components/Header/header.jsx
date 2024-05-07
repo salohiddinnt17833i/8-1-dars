@@ -12,7 +12,7 @@ import redirect from "../../assets/redirect.svg";
 import description from "../../assets/description.svg";
 import profile from "../../assets/Profile.svg";
 
-import "./header.css";
+import "./Header.css";
 
 function Header() {
   const [name, setAge] = React.useState("");
@@ -34,7 +34,7 @@ function Header() {
 
           <ul className="nav">
             <li>
-              <a href="#" className="tab">
+              <a href="#" className="tab text-[#0062FF]">
                 <img src={main} alt="" />
                 Asosiy
               </a>
@@ -67,22 +67,7 @@ function Header() {
 
           <div className="select">
             <a href="#"><img src={profile} alt="" /></a>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="demo-select-small-label">
-                Austin Robertson
-              </InputLabel>
-              <Select
-                labelId="demo-select-small-label"
-                id="demo-select-small"
-                value={name}
-                label="name"
-                onChange={handleChange}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
+           <p> Austin Robertson</p>
           </div>
         </div>
       </div>

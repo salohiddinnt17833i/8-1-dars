@@ -20,38 +20,44 @@ import trello from "./assets/trello.svg";
 import bitrix from "./assets/bitrix.svg";
 import iphone from "./assets/iphone.svg";
 import user from "./assets/Icon (3).svg";
+import Chart from './components/Chart'
+
+import React, { PureComponent } from 'react';
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+
+
 
 import "./App.css";
-import Header from "./components/Header/header";
+import Header from "./components/Header/Header";
 
 function App() {
   const barData = [
     {
-      name: "Page A",
-      uv: 4000,
-      pv: 7500,
+      name: "SMS yuborilganlar",
+      uv: 34,
+      pv: 100,
       amt: 2400,
     },
     {
-      name: "Page B",
+      name: "Linkga kirganlar",
       uv: 3000,
       pv: 4500,
       amt: 2210,
     },
     {
-      name: "Page C",
+      name: "Mahsulot sahifasiga kirganlar",
       uv: 2000,
       pv: 3000,
       amt: 2290,
     },
     {
-      name: "Page D",
+      name: "Sotib olganlar",
       uv: 2780,
       pv: 5508,
       amt: 2000,
     },
     {
-      name: "Page E",
+      name: "Izoh qoldirganlar",
       uv: 1890,
       pv: 4000,
       amt: 2181,
@@ -103,7 +109,9 @@ function App() {
     }
   ];
 
+
   return (
+
     <>
       <div className="back-color">
         <Header></Header>
@@ -373,15 +381,19 @@ function App() {
                     <h1 className="total-order">1000 ta</h1>
                   </div>
                   <div className="total-circule-chart">
-                    <div className="circle-chart-correct">
-                      <div className="circle-chart-go"></div>
+                    <div className="circle-chart-correct oval-CHart">
+                      <div className="circle-chart-go">
+                        <Chart />
+                      </div>
                       <div className="circle-chart-info">
                         <h1 className="circle-chart-order">740 ta</h1>
                         <p className="circle-chart-title">Yetib borgan</p>
                       </div>
                     </div>
-                    <div className="circle-chart-false">
-                      <div className="circle-chart-error"></div>
+                    <div className="circle-chart-false oval-CHart">
+                      <div className="circle-chart-error">
+                        <Chart />
+                      </div>
                       <div className="circle-chart-info">
                         <h1 className="circle-chart-order">260 ta</h1>
                         <p className="circle-chart-title">Xatolik bo'lgan</p>
@@ -392,7 +404,7 @@ function App() {
 
                 <div className="line-chart">
                   <div>
-                    <LineChart width={100} height={70} data={data}>
+                    <LineChart width={280} height={50} data={data}>
                       <Line type="monotone" dataKey="pv" stroke="#000" strokeWidth={2} />
                     </LineChart>
                   </div>
